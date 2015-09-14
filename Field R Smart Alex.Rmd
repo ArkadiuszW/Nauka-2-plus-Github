@@ -1,0 +1,34 @@
+---
+title: "Field R Smart Alex"
+author: "Arkadiusz Wasowski"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+Rozdział 6 "Correlation"
+
+# Task 2
+
+Read data to task2.data and display the `head`
+
+```{r, echo = FALSE} 
+task2.data <- read.delim("Example Files/ChickFlick.dat", header = T)
+head(task2.data)
+```
+
+Make some summaries of data
+
+```{r, echo=FALSE}
+summary(task2.data)
+str(task2.data)
+```
+
+Check correlation between gender and arrousal and between film and arrousal
+```{r, echo = FALSE}
+cor1 <- cor.test(as.numeric(task2.data$gender), task2.data$arousal)
+cor2 <- cor.test(as.numeric(task2.data$film), task2.data$arousal)
+cor1
+cor2
+```
+
+To summarize, correlation between gender and arousal is `r round(cor1$estimate,3)`, and correlation between film and arousal is `r round(cor2$estimate,3)`

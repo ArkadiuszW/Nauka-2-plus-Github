@@ -1,0 +1,47 @@
+---
+title: "Raport"
+author: "Arkadiusz Wasowski"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+To jest mój raport ćwiczebny.
+
+Zamieszczanie fragmentów kodu do wykonania w ramach dokumentu zrealizowane jest poniżej
+```{r}
+summary(cars)
+```
+
+Podobnie mogę zamieścić wykresy (w tym przypadku echo=FALSE zatrzymuje drukowanie kawałku kodu który ten plot wywołał
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+W samym tekscie mogę stosować listy, o ile będę pamiętał o dodatkowym `Enterze` po tekscie a przed pierszym elementem listy oraz po ostatnim elemencie listy
+
+- *kursywę*
+- _inną kursywę_
+- **bolda**
+
+Mogę także zrobić listę numerowaną, znowu pamiętając o `Enterach`
+
+1. Pierwszy
+2. Dwa
+
+mogę także zapisywać kawałki kodu które nie zostaną wykonane w linii tekstu `mean(cars[ ,1]` oraz kawałki kodu które zostaną wykonane `r mean(cars$speed)`
+
+Kawałki kodu mogą mieć różne atrybuty (i nazwę). Najważniejsze atrybuty to
+
+- echo=FALSE - the code will not be shown in the final document (though any results/output would still be displayed)
+- results = "hide" - hide the results/output (but here the code would still be displayed)
+- include = FALSE - to have the chunk evaluated, but neither the code nor its output displayed
+- fig.width=
+- fig.height=
+
+Note that if include=FALSE, all of the code, results, and figures will be suppressed. If include=TRUE and results="hide", the results will be hidden but figures will still be shown. To hide the figures, use fig.show="hide".
+
+Jest jeszcze coś takiego jak **"global chunk options"** ale na razie odpuszczam. Więcej info w 
+http://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
+
+
